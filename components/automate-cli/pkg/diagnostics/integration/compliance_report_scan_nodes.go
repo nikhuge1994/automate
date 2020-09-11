@@ -64,7 +64,6 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 			ts := time.Now()
 			name := "integration-diagnostic-" + ts.Format("20060102150405")
 
-			// Create a node.
 			t := template.Must(template.New("createNode").Parse(nodeForScanningTemplateStr))
 			err := t.Execute(buf, struct {
 				Name string
@@ -76,6 +75,7 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 				return err
 			}
 
+			// Create a node
 			reqPath := "/api/v0/nodes"
 			resp, err := tstCtx.DoLBRequest(
 				reqPath,
@@ -108,18 +108,27 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 			}
 			buf.Reset()
 
-			// Create a scan job
+			filters := make([]filter, 2)
+			filters[0].Type = "start_time"
+			filters[0].Values = []string{"2017-01-01T00:00:00Z"}
+			filters[1].Type = "end_time"
+			filters[1].Values = []string{time.Now().UTC().Format(time.RFC3339)}
+
 			err = tmpl.Execute(buf, struct {
-				Name   string
-				NodeID string
+				Name    string
+				NodeID  string
+				Filters []filter
 			}{
-				Name:   name,
-				NodeID: nodeID,
+				Name:    name,
+				NodeID:  nodeID,
+				Filters: filters,
 			})
 
 			if err != nil {
 				return err
 			}
+
+			// Create a scan job
 			reqPath = "/api/v0/compliance/scanner/jobs"
 			resp, err = tstCtx.DoLBRequest(
 				reqPath,
@@ -171,6 +180,7 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 			}
 
 			err = Retry(3, 5*time.Second, func() error {
+				// Get scanned nodes from licence usage
 				resp, err := clirequest.LicenseUsage()
 				require.NoError(tstCtx, err)
 				assert.Equal(tstCtx, "/proc/self/exe license usage --result-json /tmp/license_usage.json", resp.Command)
@@ -178,6 +188,8 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 				assert.Equal(tstCtx, 0, resp.ErrorCode)
 
 				containsEntity := false
+				fmt.Printf("!!!!!!!!1 resp.Result.ScannedNodes: %+v", resp.Result.ScannedNodes)
+				fmt.Printf("!!!!!!!!2 loaded: %+v", loaded)
 				for _, node := range resp.Result.ScannedNodes {
 					if node.ID == loaded.ID {
 						containsEntity = true
