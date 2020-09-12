@@ -108,12 +108,6 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 			}
 			buf.Reset()
 
-			filters := make([]filter, 2)
-			filters[0].Type = "start_time"
-			filters[0].Values = []string{"2017-01-01T00:00:00Z"}
-			filters[1].Type = "end_time"
-			filters[1].Values = []string{time.Now().UTC().Format(time.RFC3339)}
-
 			err = tmpl.Execute(buf, struct {
 				Name    string
 				NodeID  string
@@ -121,7 +115,6 @@ func CreateComplianceReportScanNodesDiagnostic() diagnostics.Diagnostic {
 			}{
 				Name:    name,
 				NodeID:  nodeID,
-				Filters: filters,
 			})
 
 			if err != nil {
