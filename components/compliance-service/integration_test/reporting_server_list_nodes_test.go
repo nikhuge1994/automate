@@ -25,7 +25,7 @@ func TestListNodesFiltering(t *testing.T) {
 	}{
 		// organization
 		{
-			description: "Filter out one of the nodes by 'organization'",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes by 'organization'",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:           "1",
@@ -47,7 +47,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by 'organization'",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by 'organization'",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:           "1",
@@ -71,7 +71,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// chef_server
 		{
-			description: "Filter out one of the nodes by chef servers",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes by chef servers",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -93,7 +93,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by chef servers",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by chef servers",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -117,7 +117,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// inspec_version
 		{
-			description: "Filter out one of the nodes by chef servers",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes by chef servers",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:        "1",
@@ -139,7 +139,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by chef servers",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by chef servers",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:        "1",
@@ -163,7 +163,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// chef tags
 		{
-			description: "Filter out one of the nodes with chef tags",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes with chef tags",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -185,7 +185,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out one of the nodes with multiple tags use chef tags",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes with multiple tags use chef tags",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -207,7 +207,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by chef tags",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by chef tags",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -231,7 +231,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// policy_group
 		{
-			description: "Filter out one of the nodes with the policy group",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes with the policy group",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -253,7 +253,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by policy group",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by policy group",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -277,7 +277,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// policy_name
 		{
-			description: "Filter out one of the nodes with the policy name",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes with the policy name",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -299,7 +299,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by policy name",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by policy name",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -323,7 +323,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// platform
 		{
-			description: "Filter out one of the nodes with platform",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes with platform",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -357,7 +357,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by platform",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by platform",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -393,7 +393,7 @@ func TestListNodesFiltering(t *testing.T) {
 
 		// platform_with_version
 		{
-			description: "Filter out one of the nodes with platform_with_version",
+			description: "reporting_server_list_nodes_test.go => Filter out one of the nodes with platform_with_version",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -427,7 +427,7 @@ func TestListNodesFiltering(t *testing.T) {
 			expectedIds: []string{"1"},
 		},
 		{
-			description: "Filter out all of the nodes by platform_with_version",
+			description: "reporting_server_list_nodes_test.go => Filter out all of the nodes by platform_with_version",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -495,7 +495,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// inspec_version
 		{
-			description: "inspec_version: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => inspec_version: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:        "1",
@@ -521,7 +521,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "inspec_version: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => inspec_version: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:        "1",
@@ -549,7 +549,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// chef server
 		{
-			description: "chef server: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => chef server: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -575,7 +575,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "chef server: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => chef server: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "2",
@@ -601,7 +601,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "chef server: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => chef server: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -627,7 +627,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "chef_server: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => chef_server: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -655,7 +655,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// chef tags
 		{
-			description: "chef tags: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => chef tags: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -681,7 +681,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "chef tags: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => chef tags: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "2",
@@ -707,7 +707,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "chef_tags: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => chef_tags: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -733,7 +733,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "chef_tags: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => chef_tags: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -761,7 +761,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// environment
 		{
-			description: "environment: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => environment: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -787,7 +787,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "environment: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => environment: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "2",
@@ -813,7 +813,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "environment: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => environment: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -839,7 +839,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "environment: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => environment: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -867,7 +867,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// node
 		{
-			description: "node: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => node: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -893,7 +893,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "node: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => node: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "2",
@@ -919,7 +919,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "node: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => node: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -945,7 +945,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "node: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => node: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:   "1",
@@ -973,7 +973,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// organization
 		{
-			description: "organization: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => organization: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:           "1",
@@ -999,7 +999,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "organization: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => organization: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:           "2",
@@ -1025,7 +1025,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "organization: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => organization: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:           "1",
@@ -1051,7 +1051,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "organization: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => organization: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:           "1",
@@ -1079,7 +1079,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// platform
 		{
-			description: "platform: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => platform: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1123,7 +1123,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "platform: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => platform: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "2",
@@ -1167,7 +1167,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "platform: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => platform: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1211,7 +1211,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "platform: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => platform: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1257,7 +1257,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// platform_with_version
 		{
-			description: "platform_with_version: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => platform_with_version: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1301,7 +1301,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "platform_with_version: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => platform_with_version: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "2",
@@ -1345,7 +1345,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "platform_with_version: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => platform_with_version: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1389,7 +1389,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "platform_with_version: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => platform_with_version: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1435,7 +1435,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// Policy group
 		{
-			description: "policy_group: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => policy_group: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -1461,7 +1461,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "policy_group: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => policy_group: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "2",
@@ -1487,7 +1487,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "policy_group: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => policy_group: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -1513,7 +1513,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "policy_group: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => policy_group: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:      "1",
@@ -1541,7 +1541,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// Policy Name
 		{
-			description: "policy_name: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => policy_name: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -1567,7 +1567,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "policy_name: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => policy_name: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "2",
@@ -1593,7 +1593,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "policy_name: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => policy_name: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -1619,7 +1619,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "policy_name: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => policy_name: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:     "1",
@@ -1647,7 +1647,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// Recipe
 		{
-			description: "recipe: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => recipe: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:  "1",
@@ -1673,7 +1673,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "recipe: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => recipe: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:  "2",
@@ -1699,7 +1699,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "recipe: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => recipe: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:  "1",
@@ -1725,7 +1725,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "recipe: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => recipe: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID:  "1",
@@ -1753,7 +1753,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// Roles
 		{
-			description: "roles: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => roles: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1779,7 +1779,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "roles: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => roles: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "2",
@@ -1805,7 +1805,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"3", "2"},
 		},
 		{
-			description: "role: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => role: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1831,7 +1831,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "role: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => role: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1859,7 +1859,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// Profile
 		{
-			description: "Profile: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => Profile: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1897,7 +1897,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "Profile: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => Profile: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1935,7 +1935,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "Profile: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => Profile: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -1975,7 +1975,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 
 		// control
 		{
-			description: "control: '*' wildcard",
+			description: "reporting_server_list_nodes_test.go => control: '*' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -2025,7 +2025,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "control: case insensitive wildcard 1",
+			description: "reporting_server_list_nodes_test.go => control: case insensitive wildcard 1",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -2075,7 +2075,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "control: case insensitive wildcard 2",
+			description: "reporting_server_list_nodes_test.go => control: case insensitive wildcard 2",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -2125,7 +2125,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "control: '*' wildcard one node with two matching controls",
+			description: "reporting_server_list_nodes_test.go => control: '*' wildcard one node with two matching controls",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "1",
@@ -2178,7 +2178,7 @@ func TestListNodesWildcardFiltering(t *testing.T) {
 			expectedIds: []string{"1", "2"},
 		},
 		{
-			description: "control: '?' wildcard",
+			description: "reporting_server_list_nodes_test.go => control: '?' wildcard",
 			reports: []*relaxting.ESInSpecReport{
 				{
 					NodeID: "2",
@@ -2292,42 +2292,42 @@ func TestListNodesProjectFiltering(t *testing.T) {
 		expectedIds     []string
 	}{
 		{
-			description:     "Projects: user has access to all projects",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to all projects",
 			allowedProjects: []string{authzConstants.AllProjectsExternalID},
 			expectedIds:     nodeIds,
 		},
 		{
-			description:     "Projects: user has access to one project with reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to one project with reports",
 			allowedProjects: []string{"project1"},
 			expectedIds:     nodeIds[1:3],
 		},
 		{
-			description:     "Projects: user has access to some projects with reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to some projects with reports",
 			allowedProjects: []string{"project1", "project2"},
 			expectedIds:     nodeIds[1:5],
 		},
 		{
-			description:     "Projects: user has access to projects without reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to projects without reports",
 			allowedProjects: []string{"project4", "project5"},
 			expectedIds:     []string{},
 		},
 		{
-			description:     "Projects: user has access to one project with reports and unassigned reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to one project with reports and unassigned reports",
 			allowedProjects: []string{"project1", authzConstants.UnassignedProjectID},
 			expectedIds:     nodeIds[:3],
 		},
 		{
-			description:     "Projects: user has access to some projects with reports and unassigned reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to some projects with reports and unassigned reports",
 			allowedProjects: []string{"project1", "project2", authzConstants.UnassignedProjectID},
 			expectedIds:     nodeIds[:5],
 		},
 		{
-			description:     "Projects: user has access to projects without reports and unassigned reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to projects without reports and unassigned reports",
 			allowedProjects: []string{"project4", "project5", authzConstants.UnassignedProjectID},
 			expectedIds:     nodeIds[:1],
 		},
 		{
-			description:     "Projects: user has access to unassigned reports",
+			description:     "reporting_server_list_nodes_test.go => Projects: user has access to unassigned reports",
 			allowedProjects: []string{authzConstants.UnassignedProjectID},
 			expectedIds:     nodeIds[:1],
 		},

@@ -25,7 +25,7 @@ func TestProjectUpdate(t *testing.T) {
 		projectIDs  []string
 	}{
 		{
-			description: "Environment: Single rule matching condition",
+			description: "reports_projects_update_test.go => Environment: Single rule matching condition",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env1",
 				Projects:    []string{"old_tag"},
@@ -51,7 +51,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "Environment: a rule's condition has two values for a field",
+			description: "reports_projects_update_test.go => Environment: a rule's condition has two values for a field",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env2",
 				Projects:    []string{"old_tag"},
@@ -77,7 +77,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "Environment: Single rule two matching conditions",
+			description: "reports_projects_update_test.go => Environment: Single rule two matching conditions",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env1",
 				Projects:    []string{"old_tag"},
@@ -109,7 +109,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "Environment: Single rule, one non-matching condition",
+			description: "reports_projects_update_test.go => Environment: Single rule, one non-matching condition",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env1",
 				Projects:    []string{"old_tag"},
@@ -141,7 +141,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "Environment: two rules only one matching",
+			description: "reports_projects_update_test.go => Environment: two rules only one matching",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env1",
 				Projects:    []string{"old_tag"},
@@ -175,7 +175,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "Environment: two project only one matching",
+			description: "reports_projects_update_test.go => Environment: two project only one matching",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env1",
 				Projects:    []string{"old_tag"},
@@ -213,7 +213,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project3"},
 		},
 		{
-			description: "Environment: two matching projects",
+			description: "reports_projects_update_test.go => Environment: two matching projects",
 			report: &relaxting.ESInSpecReport{
 				Environment: "env1",
 				Projects:    []string{"old_tag"},
@@ -255,7 +255,7 @@ func TestProjectUpdate(t *testing.T) {
 
 		// roles
 		{
-			description: "roles: Single rule matching",
+			description: "reports_projects_update_test.go => roles: Single rule matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				Roles:    []string{"area_51"},
@@ -281,7 +281,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "roles: Single rule not matching",
+			description: "reports_projects_update_test.go => roles: Single rule not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				Roles:    []string{"area_51"},
@@ -307,7 +307,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "roles: Single rule differing case not matching",
+			description: "reports_projects_update_test.go => roles: Single rule differing case not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				Roles:    []string{"Area_51"},
@@ -333,7 +333,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "roles: Single rule with two values on a condition",
+			description: "reports_projects_update_test.go => roles: Single rule with two values on a condition",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				Roles:    []string{"area_51"},
@@ -359,7 +359,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "roles: multiple roles one matching",
+			description: "reports_projects_update_test.go => roles: multiple roles one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				Roles:    []string{"area_51", "area_52", "area_53"},
@@ -385,7 +385,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "roles: multiple roles, none matching",
+			description: "reports_projects_update_test.go => roles: multiple roles, none matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				Roles:    []string{"area_51", "area_52", "area_53"},
@@ -411,7 +411,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "roles: setting the project to unassigned when there are no roles",
+			description: "reports_projects_update_test.go => roles: setting the project to unassigned when there are no roles",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 			},
@@ -437,7 +437,7 @@ func TestProjectUpdate(t *testing.T) {
 
 		// ChefServers
 		{
-			description: "chefServers: Single rule matching",
+			description: "reports_projects_update_test.go => chefServers: Single rule matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				SourceFQDN: "chef-server.org",
@@ -463,7 +463,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefServers: Single rule not matching",
+			description: "reports_projects_update_test.go => chefServers: Single rule not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				SourceFQDN: "chef-server2.org",
@@ -489,7 +489,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "chefServers: Single rule differing case not matching",
+			description: "reports_projects_update_test.go => chefServers: Single rule differing case not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				SourceFQDN: "Chef-server.org",
@@ -515,7 +515,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "chefServers: Single rule with two values on a condition",
+			description: "reports_projects_update_test.go => chefServers: Single rule with two values on a condition",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				SourceFQDN: "chef-server.org",
@@ -541,7 +541,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefServers: two rules both matching on different fields",
+			description: "reports_projects_update_test.go => chefServers: two rules both matching on different fields",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				SourceFQDN:       "chef-server.org",
@@ -577,7 +577,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefServers: two rules with only one matching",
+			description: "reports_projects_update_test.go => chefServers: two rules with only one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				SourceFQDN:       "chef-server.org",
@@ -615,7 +615,7 @@ func TestProjectUpdate(t *testing.T) {
 
 		// ChefOrgs
 		{
-			description: "Org: Single rule matching update",
+			description: "reports_projects_update_test.go => Org: Single rule matching update",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				OrganizationName: "org1",
@@ -641,7 +641,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "Org: no project matches",
+			description: "reports_projects_update_test.go => Org: no project matches",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				OrganizationName: "org1",
@@ -667,7 +667,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "Org: one matching project",
+			description: "reports_projects_update_test.go => Org: one matching project",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				OrganizationName: "org1",
@@ -695,7 +695,7 @@ func TestProjectUpdate(t *testing.T) {
 
 		// PolicyGroup
 		{
-			description: "policyGroups: Single rule matching",
+			description: "reports_projects_update_test.go => policyGroups: Single rule matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:    []string{"old_tag"},
 				PolicyGroup: "prod",
@@ -721,7 +721,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "policyGroups: Single rule not matching",
+			description: "reports_projects_update_test.go => policyGroups: Single rule not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:    []string{"old_tag"},
 				PolicyGroup: "prod",
@@ -747,7 +747,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "policyGroups: Single rule differing case not matching",
+			description: "reports_projects_update_test.go => policyGroups: Single rule differing case not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:    []string{"old_tag"},
 				PolicyGroup: "prod",
@@ -773,7 +773,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "policyGroups: Single rule with two values on one condition",
+			description: "reports_projects_update_test.go => policyGroups: Single rule with two values on one condition",
 			report: &relaxting.ESInSpecReport{
 				Projects:    []string{"old_tag"},
 				PolicyGroup: "prod",
@@ -799,7 +799,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "policyGroups: two rules both matching on different fields",
+			description: "reports_projects_update_test.go => policyGroups: two rules both matching on different fields",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				PolicyGroup:      "prod",
@@ -835,7 +835,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "policyGroups: two rules with only one matching",
+			description: "reports_projects_update_test.go => policyGroups: two rules with only one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				PolicyGroup:      "prod",
@@ -873,7 +873,7 @@ func TestProjectUpdate(t *testing.T) {
 
 		// PolicyName
 		{
-			description: "policyNames: Single rule matching",
+			description: "reports_projects_update_test.go => policyNames: Single rule matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				PolicyName: "prod",
@@ -899,7 +899,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "policyNames: Single rule not matching",
+			description: "reports_projects_update_test.go => policyNames: Single rule not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				PolicyName: "prod",
@@ -925,7 +925,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "policyNames: Single rule differing case not matching",
+			description: "reports_projects_update_test.go => policyNames: Single rule differing case not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				PolicyName: "prod",
@@ -951,7 +951,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "policyNames: Single rule with two values on a condition",
+			description: "reports_projects_update_test.go => policyNames: Single rule with two values on a condition",
 			report: &relaxting.ESInSpecReport{
 				Projects:   []string{"old_tag"},
 				PolicyName: "prod",
@@ -977,7 +977,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "policyNames: two rules both matching on different fields",
+			description: "reports_projects_update_test.go => policyNames: two rules both matching on different fields",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				PolicyName:       "prod",
@@ -1013,7 +1013,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "policyNames: a rule with two conditions with only one matching",
+			description: "reports_projects_update_test.go => policyNames: a rule with two conditions with only one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				PolicyName:       "prod",
@@ -1047,7 +1047,7 @@ func TestProjectUpdate(t *testing.T) {
 
 		// ChefTags
 		{
-			description: "chefTags: Single rule matching",
+			description: "reports_projects_update_test.go => chefTags: Single rule matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				ChefTags: []string{"area_51"},
@@ -1073,7 +1073,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefTags: Single rule not matching",
+			description: "reports_projects_update_test.go => chefTags: Single rule not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				ChefTags: []string{"area_51"},
@@ -1099,7 +1099,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "chefTags: Single rule differing case not matching",
+			description: "reports_projects_update_test.go => chefTags: Single rule differing case not matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				ChefTags: []string{"Area_51"},
@@ -1125,7 +1125,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "chefTags: Single rule with two values on a condition",
+			description: "reports_projects_update_test.go => chefTags: Single rule with two values on a condition",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				ChefTags: []string{"area_51"},
@@ -1151,7 +1151,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefTags: two rules both matching on different fields",
+			description: "reports_projects_update_test.go => chefTags: two rules both matching on different fields",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				ChefTags:         []string{"area_51"},
@@ -1187,7 +1187,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefTags: two rules with only one matching",
+			description: "reports_projects_update_test.go => chefTags: two rules with only one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				ChefTags:         []string{"area_51"},
@@ -1223,7 +1223,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefTags: two conditions with only one matching",
+			description: "reports_projects_update_test.go => chefTags: two conditions with only one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects:         []string{"old_tag"},
 				ChefTags:         []string{"area_51"},
@@ -1255,7 +1255,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "chefTags: multiple roles one matching",
+			description: "reports_projects_update_test.go => chefTags: multiple roles one matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				ChefTags: []string{"area_51", "area_52", "area_53"},
@@ -1281,7 +1281,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{"project9"},
 		},
 		{
-			description: "chefTags: multiple roles, none matching",
+			description: "reports_projects_update_test.go => chefTags: multiple roles, none matching",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 				ChefTags: []string{"area_51", "area_52", "area_53"},
@@ -1307,7 +1307,7 @@ func TestProjectUpdate(t *testing.T) {
 			projectIDs: []string{},
 		},
 		{
-			description: "chefTags: setting the project to unassigned when there are no chef tags",
+			description: "reports_projects_update_test.go => chefTags: setting the project to unassigned when there are no chef tags",
 			report: &relaxting.ESInSpecReport{
 				Projects: []string{"old_tag"},
 			},

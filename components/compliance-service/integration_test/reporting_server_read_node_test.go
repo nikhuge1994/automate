@@ -41,27 +41,27 @@ func TestReadNode(t *testing.T) {
 		nodeId          string
 	}{
 		{
-			description:     "Projects: user has access to all projects accessing an assigned node",
+			description:     "reporting_server_read_node_test.go => Projects: user has access to all projects accessing an assigned node",
 			allowedProjects: []string{authzConstants.AllProjectsExternalID},
 			nodeId:          assignedNodeId,
 		},
 		{
-			description:     "Projects: user has access to all projects accessing an unassigned node",
+			description:     "reporting_server_read_node_test.go => Projects: user has access to all projects accessing an unassigned node",
 			allowedProjects: []string{authzConstants.AllProjectsExternalID},
 			nodeId:          unassignedNodeId,
 		},
 		{
-			description:     "Projects: user has access to all projects a node belongs to accessing an assigned node",
+			description:     "reporting_server_read_node_test.go => Projects: user has access to all projects a node belongs to accessing an assigned node",
 			allowedProjects: []string{"project1", "project2"},
 			nodeId:          assignedNodeId,
 		},
 		{
-			description:     "Projects: user has access to some projects a node belongs to accessing an assigned node",
+			description:     "reporting_server_read_node_test.go => Projects: user has access to some projects a node belongs to accessing an assigned node",
 			allowedProjects: []string{"project1", "project3"},
 			nodeId:          assignedNodeId,
 		},
 		{
-			description:     "Projects: user has access to unassigned nodes accessing an unassigned node",
+			description:     "reporting_server_read_node_test.go => Projects: user has access to unassigned nodes accessing an unassigned node",
 			allowedProjects: []string{"project1", authzConstants.UnassignedProjectID},
 			nodeId:          unassignedNodeId,
 		},
@@ -85,17 +85,17 @@ func TestReadNode(t *testing.T) {
 		nodeId          string
 	}{
 		{
-			description:     "Projects: user does not have access to any projects an assigned report belongs to",
+			description:     "reporting_server_read_node_test.go => Projects: user does not have access to any projects an assigned report belongs to",
 			allowedProjects: []string{"project3"},
 			nodeId:          assignedNodeId,
 		},
 		{
-			description:     "Projects: user with unassigned access accessing an assigned report",
+			description:     "reporting_server_read_node_test.go => Projects: user with unassigned access accessing an assigned report",
 			allowedProjects: []string{authzConstants.UnassignedProjectID},
 			nodeId:          assignedNodeId,
 		},
 		{
-			description:     "Projects: user without unassigned access accessing an unassigned report",
+			description:     "reporting_server_read_node_test.go => Projects: user without unassigned access accessing an unassigned report",
 			allowedProjects: []string{"project1"},
 			nodeId:          unassignedNodeId,
 		},

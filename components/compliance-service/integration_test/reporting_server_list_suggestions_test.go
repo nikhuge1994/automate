@@ -28,7 +28,7 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 	}{
 		// organization
 		{
-			description: "Only two orgs are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two orgs are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:           "1",
@@ -46,11 +46,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "organization",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2"},
 		},
 		{
-			description: "All orgs are returned",
+			description: "reporting_server_list_suggestions_test.go => All orgs are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:           "1",
@@ -68,11 +71,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "organization",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3"},
 		},
 		{
-			description: "No orgs are returned",
+			description: "reporting_server_list_suggestions_test.go => No orgs are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:           "1",
@@ -90,13 +96,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "organization",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// inspec_version
 		{
-			description: "Only two versions are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two versions are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:        "1",
@@ -114,11 +123,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "inspec_version",
 				Text: "3.1",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"3.1.0", "3.1.1"},
 		},
 		{
-			description: "All inspec_version are returned",
+			description: "reporting_server_list_suggestions_test.go => All inspec_version are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:        "1",
@@ -136,11 +148,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "inspec_version",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"3.1.0", "3.1.1", "4.1.0"},
 		},
 		{
-			description: "No inspec_version are returned",
+			description: "reporting_server_list_suggestions_test.go => No inspec_version are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:        "1",
@@ -158,13 +173,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "inspec_version",
 				Text: "1.0",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// chef_server
 		{
-			description: "Only two chef servers are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two chef servers are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:     "1",
@@ -182,11 +200,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "chef_server",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2"},
 		},
 		{
-			description: "All chef servers are returned",
+			description: "reporting_server_list_suggestions_test.go => All chef servers are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:     "1",
@@ -204,11 +225,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "chef_server",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3"},
 		},
 		{
-			description: "No chef servers are returned",
+			description: "reporting_server_list_suggestions_test.go => No chef servers are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:     "1",
@@ -226,13 +250,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "chef_server",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// chef_tags
 		{
-			description: "Only two chef tags are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two chef tags are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:   "1",
@@ -250,11 +277,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "chef_tags",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3", "org4"},
 		},
 		{
-			description: "All chef tags are returned",
+			description: "reporting_server_list_suggestions_test.go => All chef tags are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:   "1",
@@ -272,11 +302,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "chef_tags",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3", "org4", "org5", "org6"},
 		},
 		{
-			description: "No chef tags are returned",
+			description: "reporting_server_list_suggestions_test.go => No chef tags are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:   "1",
@@ -294,13 +327,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "chef_tags",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// policy_group
 		{
-			description: "Only two policy groups are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two policy groups are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:      "1",
@@ -318,11 +354,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "policy_group",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2"},
 		},
 		{
-			description: "All policy groups are returned",
+			description: "reporting_server_list_suggestions_test.go => All policy groups are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:      "1",
@@ -340,11 +379,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "policy_group",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3"},
 		},
 		{
-			description: "No policy groups are returned",
+			description: "reporting_server_list_suggestions_test.go => No policy groups are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:      "1",
@@ -362,13 +404,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "policy_group",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// policy_name
 		{
-			description: "Only two policy names are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two policy names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:     "1",
@@ -386,11 +431,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "policy_name",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2"},
 		},
 		{
-			description: "All policy names are returned",
+			description: "reporting_server_list_suggestions_test.go => All policy names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:     "1",
@@ -408,11 +456,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "policy_name",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3"},
 		},
 		{
-			description: "No policy names are returned",
+			description: "reporting_server_list_suggestions_test.go => No policy names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID:     "1",
@@ -430,13 +481,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "policy_name",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// platform
 		{
-			description: "Only two platform names are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two platform names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID: "1",
@@ -472,11 +526,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "platform",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2"},
 		},
 		{
-			description: "All platform names are returned",
+			description: "reporting_server_list_suggestions_test.go => All platform names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID: "1",
@@ -512,11 +569,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "platform",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3"},
 		},
 		{
-			description: "No pratform names are returned",
+			description: "reporting_server_list_suggestions_test.go => No pratform names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID: "1",
@@ -552,13 +612,16 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "platform",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
 
 		// platform_with_version
 		{
-			description: "Only two platform_with_version names are returned",
+			description: "reporting_server_list_suggestions_test.go => Only two platform_with_version names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID: "1",
@@ -594,11 +657,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "platform_with_version",
 				Text: "or",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2"},
 		},
 		{
-			description: "All platform_with_version names are returned",
+			description: "reporting_server_list_suggestions_test.go => All platform_with_version names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID: "1",
@@ -634,11 +700,14 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "platform_with_version",
 				Text: "",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{"org1", "org2", "org3"},
 		},
 		{
-			description: "No platform_with_version names are returned",
+			description: "reporting_server_list_suggestions_test.go => No platform_with_version names are returned",
 			summaries: []*relaxting.ESInSpecSummary{
 				{
 					NodeID: "1",
@@ -674,6 +743,9 @@ func TestReportingListSuggestionsFiltering(t *testing.T) {
 			request: reporting.SuggestionRequest{
 				Type: "platform",
 				Text: "bob",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 			expectedTerms: []string{},
 		},
@@ -720,30 +792,39 @@ func TestReportingListSuggestionsLargeArrayValues(t *testing.T) {
 		request     *reporting.SuggestionRequest
 	}{
 		{
-			description: "chef_tags",
+			description: "reporting_server_list_suggestions_test.go => chef_tags",
 			summary: &relaxting.ESInSpecSummary{
 				ChefTags: terms,
 			},
 			request: &reporting.SuggestionRequest{
 				Type: "chef_tags",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 		},
 		{
-			description: "recipe",
+			description: "reporting_server_list_suggestions_test.go => recipe",
 			summary: &relaxting.ESInSpecSummary{
 				Recipes: terms,
 			},
 			request: &reporting.SuggestionRequest{
 				Type: "recipe",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 		},
 		{
-			description: "roles",
+			description: "reporting_server_list_suggestions_test.go => roles",
 			summary: &relaxting.ESInSpecSummary{
 				Roles: terms,
 			},
 			request: &reporting.SuggestionRequest{
 				Type: "role",
+				Filters: []*reporting.ListFilter{
+					{Type: "end_time", Values: []string{"2018-10-25T18:18:41Z"}},
+				},
 			},
 		},
 	}
@@ -870,42 +951,42 @@ func TestReportingListSuggestions(t *testing.T) {
 		expectedIds     []string
 	}{
 		{
-			description:     "user has access to all projects",
+			description:     "reporting_server_list_suggestions_test.go => user has access to all projects",
 			allowedProjects: []string{authzConstants.AllProjectsExternalID},
 			expectedIds:     reportIds,
 		},
 		{
-			description:     "user has access to one project with reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to one project with reports",
 			allowedProjects: []string{"project1"},
 			expectedIds:     reportIds[1:3],
 		},
 		{
-			description:     "user has access to some projects with reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to some projects with reports",
 			allowedProjects: []string{"project1", "project2"},
 			expectedIds:     reportIds[1:5],
 		},
 		{
-			description:     "user has access to projects without reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to projects without reports",
 			allowedProjects: []string{"project4", "project5"},
 			expectedIds:     []string{},
 		},
 		{
-			description:     "user has access to one project with reports and unassigned reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to one project with reports and unassigned reports",
 			allowedProjects: []string{"project1", authzConstants.UnassignedProjectID},
 			expectedIds:     reportIds[:3],
 		},
 		{
-			description:     "user has access to some projects with reports and unassigned reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to some projects with reports and unassigned reports",
 			allowedProjects: []string{"project1", "project2", authzConstants.UnassignedProjectID},
 			expectedIds:     reportIds[:5],
 		},
 		{
-			description:     "user has access to projects without reports and unassigned reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to projects without reports and unassigned reports",
 			allowedProjects: []string{"project4", "project5", authzConstants.UnassignedProjectID},
 			expectedIds:     reportIds[:1],
 		},
 		{
-			description:     "user has access to unassigned reports",
+			description:     "reporting_server_list_suggestions_test.go => user has access to unassigned reports",
 			allowedProjects: []string{authzConstants.UnassignedProjectID},
 			expectedIds:     reportIds[:1],
 		},
